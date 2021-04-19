@@ -38,6 +38,5 @@ export class HeroSearchComponent implements OnInit {
     // every time the user types in the textbox, the binding calls search() with the textbox value, a "search term"
     // searchTerms becomes an Observable emitting a steady stream of search terms
     this.searchTerms.next(term);
-    console.log(term);
   }
 }
