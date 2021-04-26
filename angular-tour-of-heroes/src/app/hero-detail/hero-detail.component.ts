@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Hero } from '../hero';
+import { Hero } from '../models/hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../hero.service';
+import { HeroService } from '../services/hero.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -10,8 +10,7 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-detail.component.css'],
 })
 export class HeroDetailComponent implements OnInit {
-  // **QUESTION: what is the best way to handle this (throws error when i don't initialize, when i make nullable then there is a problem with updateHero(this.hero) because hero can be undefined)? stackoverflow says to disable requiring initialization but i kind of like having stricter rules
-  hero: Hero = { id: -1, name: 'placeholder' };
+  hero: Hero;
 
   constructor(
     private route: ActivatedRoute,
